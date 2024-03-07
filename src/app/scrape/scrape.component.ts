@@ -91,7 +91,7 @@ downloadFile() {
   const url= window.URL.createObjectURL(blob);
   const link = document.createElement('a');
   link.href = url;
-  link.download = 'script.py';
+  link.download = 'scriptCron2WSL.py';
   link.click();
 }
 
@@ -102,7 +102,7 @@ downloadFile() {
     
     if (this.myForm1.valid) {
 
-      this.downloadFile()
+      
 
 
 
@@ -138,10 +138,18 @@ downloadFile() {
       queryParams = queryParams.append("url",this.myForm1.controls['url'].value );
       queryParams = queryParams.append("cron",this.myForm1.controls['cron'].value );
       this.http.get('https://hg7xygvm17.execute-api.us-east-2.amazonaws.com/five/crontaskrock',
-      { headers,params:queryParams }).subscribe(
-           (response) =>{ console.log(response) ; console.log("correcto");},
-           (error) => { this.error = error.message; console.log("incorrecto"); }
-      );
+      { headers,params:queryParams,responseType: 'text' }).subscribe(
+        
+
+        (response) => { console.log(response);  },
+        (error) => { console.log(error); });
+
+          //  (response) =>{ console.log(response) ; },
+          //  (error) => { this.error = error.message;  }
+      //);
+
+
+      //this.downloadFile();
 
     } else {
       console.log('Form is not valid');
