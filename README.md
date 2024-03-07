@@ -27,11 +27,9 @@ Do not build a Cron expression parser, there are many to choose from.
 
 5. The source control was created in github (<https://github.com/jthebest/rockwell.git>), by  alias jthebest
 
-
 # rockwell
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
-
 
 ## Development server
 
