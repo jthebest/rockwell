@@ -2,7 +2,7 @@ import os
 from crontab import CronTab
 import requests
 
-def jobs(url):
+def job(url):
     try:
         response = requests.get(url)
         print('Ping Successful!')
@@ -14,12 +14,8 @@ def jobs(url):
         print(f'An error occurred: {e}')
 
 def schedule_job(cron_expression, url):
-    with CronTab(user='desarrollo') as cron:
-        print('userscron:')
-        #jobs(url)
-        job = cron.new(command='python3 /mnt/c/Users/Desarrollo/Downloads/script.py')
-        print('jobsnew:')
+    with CronTab(user='username') as cron:
+        job = cron.new(command='python /path/to/your/script.py')
         job.setall(cron_expression)
 
-# Replace 'cron_expression' and 'url' with querystringparameters url y cron.
-schedule_job("* * * * *", "https://www.rockwellautomation.com/")
+# Replace 'cron_expression' and 'url' with your values
