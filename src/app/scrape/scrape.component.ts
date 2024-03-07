@@ -1,19 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-//import * as cron from 'node-cron';
-//import { writeFileSync } from "fs";
-//import * as fs from 'fs';
-
-//import { CronJobExample } from './CronJobExample';
-//import { CronJob } from 'cron';
-
-//import { TaskSchedulerService } from '../task-scheduler.service';
-//import { CronjobComponent } from '../cronjob/cronjob.component';
-//import { CronJob } from 'cron';
-//import * as cron from 'cron';
-//import { CronJob } from 'cron';
-
 @Component({
   selector: 'app-scrape',
   templateUrl: './scrape.component.html',
@@ -22,15 +9,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 
-
-
-
 export class ScrapeComponent implements OnInit  {
-  //public fs = require('fs');
   myForm1: FormGroup;
   error: string | undefined;
   fileService: any;
-  //cronJob: CronJob;
   public async methodToRun() {
     console.log("King Chronos");
   }
@@ -42,24 +24,11 @@ export class ScrapeComponent implements OnInit  {
       'cron': ['', [Validators.required]]
     });
     
-    
 
   }
 
   ngOnInit() {
     console.log("yes");
-
-
-//     this.myForm1 = this.fb.group({
-//     // your controls here
-//   });
-//'taskCron-Key': '4GwWAUeyux8yqNk3F4DrO5vDUfwIwticataxGPJl', // replace with your actual token
-    //           'Access-Control-Allow-Credentials': 'true'
-
-    /*     'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',  // enable CORS
-        'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
-        'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token', */
   }
 
 
@@ -95,42 +64,10 @@ downloadFile() {
   link.click();
 }
 
-
   onSubmit() {
-    //const job = cronParser.parseExpression(this.cronExpression);
     console.log("mp");
     
     if (this.myForm1.valid) {
-
-      
-
-
-
-  
-
-
-
-      // console.log("Start Write")
-      //   writeFileSync("file.py", 
-      //   "My name is John" +
-      //   "from crontab import CronTab" +
-
-      //   "# Inicializar cron" +
-      //   "cron = CronTab(user='tu_usuario')" +
-
-      //   "# Añadir nuevo trabajo cron" +
-      //   "job = cron.new(command='/usr/bin/python3 /ruta/a/tu/script.py')" +
-
-      //   "# Establecer el tiempo: cada día a las 6:00" +
-      //   "job.setall('0 6 * * *')" +
-
-      //   "# Escribir el trabajo cron en el crontab" +
-      //   "cron.write()"
-
-      //   , {
-      //   flag: "w"
-      //   })
-      //   console.log("End Write")
 
       const headers = new HttpHeaders({
       });
@@ -140,16 +77,10 @@ downloadFile() {
       this.http.get('https://hg7xygvm17.execute-api.us-east-2.amazonaws.com/five/crontaskrock',
       { headers,params:queryParams,responseType: 'text' }).subscribe(
         
-
         (response) => { console.log(response);  },
         (error) => { console.log(error); });
 
-          //  (response) =>{ console.log(response) ; },
-          //  (error) => { this.error = error.message;  }
-      //);
-
-
-      //this.downloadFile();
+      this.downloadFile();
 
     } else {
       console.log('Form is not valid');
