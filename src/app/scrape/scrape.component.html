@@ -1,28 +1,30 @@
-<div class="container">
-  
-    <form [formGroup]="myForm1" (submit)="onSubmit()">
-      <label>
-        url:
-        <input type="text" formControlName="url" />
-        <div
-          *ngIf="
+<form [formGroup]="myForm1" (submit)="onSubmit()">
+  <div class="form-group">
+    <label class="form-check-label">
+
+      URL</label>
+    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter url" formControlName="url">
+
+
+    <div class="form-group" *ngIf="
           myForm1.controls.url?.invalid 
-          "
-        >
-        url is required.
-        </div>
-      </label>
-  
-      <label>
-        cron:
-        <input type="text" formControlName="cron" />
-        <div
-          *ngIf="myForm1.controls.cron?.invalid"
-        >
-          Valid cron is required.
-        </div>
-      </label>
-  
-      <button type="submit">Submit</button>
-    </form>
+          ">
+      Url is required.
+    </div>
+
   </div>
+  <br>
+  <div class="form-group">
+    <label class="form-check-label">
+
+      Cron expresion</label>
+    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter Cron"
+      formControlName="cron">
+
+    <div class="form-group" *ngIf="myForm1.controls.cron?.invalid">
+      Valid cron is required. (* * * * *)
+    </div>
+
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
